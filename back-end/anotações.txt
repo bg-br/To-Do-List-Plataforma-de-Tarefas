@@ -1,0 +1,78 @@
+// --- REGISTRO
+/*
+App.post("/registrar", async (request, respond) => {
+    // Adquirindo as coisas do usuário
+    const { nome, email, senha } = request.body;
+    const newUser = {
+        nome,
+        email,
+        senha,
+    };
+
+    // Primeiro, verificando se não são campos vazios
+    if (!nome || !email || !senha) {
+        return respond.status(400).json({ message: "Todos os campos são obrigatórios." });
+    }
+
+    // Verificando se o usuário está ou não já registrado
+    if (await User.findOne({ where: { email } })) {
+        // Já está registrado
+        console.log("Usuário não registrado.\nEmail já existe.");
+        return respond.json({ message: "Email já registrado." });
+    } else {
+        // Registrando usuário novo
+        await User.create(newUser);
+        // Adicionando ao Banco de Dados
+        console.log("Usuário registrado.");
+        return respond.json({ message: "Registro bem sucedido." });
+    }
+});
+*/
+
+// --- LOGIN
+/*
+App.post("/login", async (request, respond) => {
+    // Adquirindo as coisas do usuário
+    const { email, senha } = request.body;
+    const userAux = await User.findOne({ where: { email } });
+
+    // Verificando se campos tão cheios
+    if (!email || !senha) {
+        console.log("Erro: Campos vazios.");
+        return respond.status(400).json({ message: "Todos os campos são obrigatórios." });
+    }
+
+    //Verificando se o usuário está ou não já registrado
+    if (userAux) {
+        // Já está registrado, agora vai verificar a senha
+        if(userAux.senha === senha) {
+            return respond.json({ message: "Login bem sucedido." });
+        } else {
+            return respond.json({ message: "Senha incorreta." });
+        }
+    } else {
+        return respond.json({ message: "Usuário não encontrado." });
+    }
+});
+*/
+
+// IDs
+/*
+App.post("/buscar-id", async (request, respond) => {
+    const { email } = request.body;
+    
+    if (!email) { return respond.status(400).json({ message: "Email é obrigatório." }) }
+        
+     const user = await User.findOne({ 
+        where: { email },
+        attributes: ['id', 'nome', 'email'] // Busca só esses campos
+    });
+        
+    if (!user) { return respond.status(404).json({ message: "Usuário não encontrado." }); }
+        
+    return respond.json({
+        message: "Usuário encontrado",
+        user: { id: user.id, nome: user.nome, email: user.email }
+    });
+});
+*/

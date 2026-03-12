@@ -1,0 +1,46 @@
+POST http://localhost:3001/registrar
+content-type: application/json
+
+{
+    "nome": "Mine",
+    "email": "Mine@gmail.com",
+    "senha": "23133"
+}
+
+### -------------------------------- LOGIN
+
+POST http://localhost:3001/login
+content-type: application/json
+
+{
+    "email": "bg@email.com",
+    "senha": "breno2006"
+}
+
+### -------------------------------- BUSCAR-ID
+
+POST http://localhost:3001/buscar-id
+content-type: application/json
+
+{
+    "email": "bg@email.com"
+}
+
+### -------------------------------- PÁGINA DE TASKS
+POST http://localhost:3001/tasks/1
+content-type: application/json
+
+{
+    "email": "Mine@gmail.com"
+}
+
+### -------------------------------- PÁGINA DE TASKS
+POST http://localhost:3001/tasks
+content-type: application/json
+
+{
+    "title": "Testezinho",
+    "description": "É só pra testar",
+    "userId": "1"
+}
+
