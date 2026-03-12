@@ -312,3 +312,9 @@ Frontend (Atualiza estado)
 - Documentação do React e Node.js
 
 ---
+## Usuário de Teste
+
+- email: teste@email.com
+- senha: 123456
+
+---
